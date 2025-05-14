@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bits & blueprints</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      display: flex; flex-direction: column; 
+      min-height: 100vh; overflow-x: hidden; 
+      background: #0d0d2b; color: #eee; 
+      perspective: 1000px; /* enables 3D rotation */ 
+    }
+    .background3d {
+      position: fixed; top: -10%; left: -10%;
+      width: 120%; height: 120%;
+      background: linear-gradient(135deg, #2a0845, #4b0082, #0f2f61, #1a237e);
+      background-size: 400% 400%;
+      transform-style: preserve-3d; /* preserve 3D transforms */
+      will-change: transform, background-position, filter; /* optimize animations */
+      animation: gradientAnim 30s ease infinite, bgPulseRotate 20s ease-in-out infinite, brightnessPulse 10s ease-in-out infinite;
+      z-index: -1;
+      filter: brightness(1);
+    }
+    @keyframes gradientAnim { 0% { background-position: 0 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0 50%; }}
+    @keyframes bgPulseRotate { 
+      0% { transform: rotateX(0deg) rotateY(0deg) scale(1); } 
+      25% { transform: rotateX(2deg) rotateY(2deg) scale(1.05); } 
+      50% { transform: rotateX(0deg) rotateY(0deg) scale(1); } 
+      75% { transform: rotateX(-2deg) rotateY(-2deg) scale(1.05); } 
+      100% { transform: rotateX(0deg) rotateY(0deg) scale(1); } 
+    }
+    @keyframes brightnessPulse { 0%,100% { filter: brightness(1); } 50% { filter: brightness(1.2); }}
+    .navbar { background-color: rgba(30, 60, 114, 0.9) !important; }
+    .navbar-brand, .nav-link { color: #ddd !important; }
+    .nav-link:hover { color: #fff !important; }
+    .hero { background-color: rgba(30, 60, 114, 0.8); padding: 60px 0; text-align: center; }
+    .futuristic-title { font-family: 'Orbitron', sans-serif; font-size: 3rem; color: #6f42c1; }
+    .futuristic-title span { display: inline-block; animation: ripple 1.6s infinite ease-in-out; }
+    @keyframes ripple { 0%,100% { transform: scale(1); color: #6f42c1; } 50% { transform: scale(1.3); color: #fff; }}
+    .section { padding: 60px 0; }
+    .section-title { margin-bottom: 40px; color: #fff; }
+    #experience, #education { background-color: rgba(30, 60, 114, 0.1); }
+    #impact { background-color: rgba(42, 82, 152, 0.8); }
+    .chart-container { max-width: 800px; margin: auto; }
+    .btn-primary { background-color: #6f42c1; border-color: #6f42c1; }
+    .btn-primary:hover { background-color: #5930a6; border-color: #5930a6; }
+    footer { background-color: #1e3c72; color: #fff; padding: 20px 0; text-align: center; }
+    footer a { color: #fff; text-decoration: none; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    @media (max-width: 576px) { .hero { padding: 40px 0; } .lead { font-size: 1rem; }}
+  </style>
+</head>
+<body>
+  <div class="background3d"></div>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top reveal">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">bits & blueprints</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#inquiry">Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="hero reveal" style="margin-top:56px;">
+    <div class="container">
+      <h1 class="futuristic-title" id="hero-title">bits & blueprints</h1>
+      <p class="lead" style="color:#fff;">Crafting the blueprint for your digital presence</p>
+      <a href="#inquiry" class="btn btn-primary btn-lg">Request Your Website</a>
+    </div>
+  </header>
+  <section id="about" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p>Hello! I'm Tyrone Cothon Jr., a passionate web designer dedicated to building customized websites that drive growth and engagement. Let's bring your vision to life.</p>
+      <p>With a Bachelor's in Computer Science and hands-on experience in HTML5, CSS3, JavaScript, Bootstrap, and Chart.js, I blend technical expertise with creative design principles.</p>
+      <p>My process includes wireframing, prototyping, performance optimization, SEO best practices, and cross-device compatibility to deliver efficient, impactful websites.</p>
+    </div>
+  </section>
+  <section id="experience" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <ul>
+        <li>2+ years designing and developing websites for local businesses and start-ups.</li>
+        <li>Responsive design expert for seamless desktop, tablet, and mobile experiences.</li>
+        <li>Dynamic features built with JavaScript, Bootstrap components, and Chart.js visualizations.</li>
+        <li>SEO optimization, performance tuning, and cross-browser testing for maximum reach.</li>
+        <li>E-commerce sites, booking platforms, and custom CMS integrations.</li>
+        <li>Ongoing support, maintenance, and feature updates.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="impact" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Projected Growth</h2>
+      <p>Projected website traffic and sales growth over 12 months, based on regular updates and marketing.</p>
+      <div class="chart-container">
+        <canvas id="impactChart"></canvas>
+      </div>
+    </div>
+  </section>
+  <section id="education" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Education & Training</h2>
+      <ul>
+        <li>Bachelor's in Computer Science – Norfolk State University, 2025</li>
+        <li>Responsive Web Design – freeCodeCamp Certification</li>
+        <li>Web Development Bootcamp – Codecademy</li>
+        <li>UI/UX Design – Coursera</li>
+        <li>CompTIA Security+ – Udemy</li>
+        <li>Intro to Cybersecurity – Cisco Networking Academy</li>
+        <li>CEH Prep – EC-Council Ethical Hacking</li>
+      </ul>
+    </div>
+  </section>
+  <section id="inquiry" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Inquiry Form</h2>
+      <form id='inquiry-form'>
+        <div class="row mb-3">
+          <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
+          <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
+        </div>
+        <div class="mb-3"><textarea name="details" class="form-control" rows="5" placeholder="Describe your website needs" required></textarea></div>
+        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+      </form>
+    </div>
+  </section>
+  <footer class="reveal">
+    <div class="container">
+      &copy; 2025 bits & blueprints | 757-637-8871 | <a href="mailto:tcjrtc2@gmail.com">tcjrtc2@gmail.com</a>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const title = document.getElementById('hero-title');
+      title.innerHTML = title.textContent.split('').map((c,i) => `<span style="animation-delay:${i*0.1}s">${c}</span>`).join('');
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      const ctx = document.getElementById('impactChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Start','3 Months','6 Months','12 Months'],
+          datasets: [
+            { label: 'Website Traffic (visits)', data: [200,800,1500,3000], borderColor: '#00d8ff', tension: 0.3 },
+            { label: 'Sales (USD)', data: [1500,5000,12000,25000], borderColor: '#ff00f2', tension: 0.3 }
+          ]
+        },
+        options: {
+          plugins: { title: { display: true, text: 'Projected Traffic & Sales Growth', color: '#fff' } },
+          scales: { x: { ticks: { color: '#fff' } }, y: { beginAtZero: true, ticks: { color: '#fff' } } }
+        }
+      });
+    });
+  </script>
+  <!-- EmailJS SDK & init -->
+  <script src='https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js'></script>
+  <script>
+    emailjs.init('CRY9t7KxoT1lJ5RjG');
+    document.getElementById('inquiry-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.sendForm(
+        'service_yhmkgss',
+        'template_9fazrru',
+        this
+      ).then(function() {
+        alert('✅ Inquiry sent successfully!');
+        document.getElementById('inquiry-form').reset();
+      }, function(error) {
+        console.error('EmailJS error:', error);
+        alert('❌ Failed to send inquiry. Please try again.');
+      });
+    });
+  </script>
+</body>
+</html>
