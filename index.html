@@ -170,7 +170,7 @@
       onScroll();
       // Chart.js
       const ctx = document.getElementById('impactChart').getContext('2d');
-      new Chart(ctx, { type:'line', data:{ labels:['Start','3 Months','6 Months','12 Months'], datasets:[{ label:'Visits', data:[200,800,1500,3000], borderColor:'#00d8ff', tension:0.3 },{ label:'Sales', data:[1500,5000,12000,25000], borderColor:'#ff00f2', tension:0.3 }] }, options:{ responsive:true, plugins:{ title:{ display:true, text:'Projected Growth', color:'#fff' }}, scales:{ x:{ ticks:{ color:'#fff'}}, y:{ beginAtZero:true, ticks:{ color:'#fff'}} } } });
+      new Chart(ctx, { type:'line', data:{ labels:['Start','3 Months','6 Months','12 Months'], datasets:[{ label:'Visits', data:[200,800,1500,3000], borderColor:'#00d8ff', tension:0.3 },{ label:'Sales', data:[1500,5000,12000,25000], borderColor:'#ff00f2', tension:0.3 }] }, options:{ responsive:true, plugins:{ title:{ display:true, text:'Finacial & Monetary Growth', color:'#fff' }}, scales:{ x:{ ticks:{ color:'#fff'}}, y:{ beginAtZero:true, ticks:{ color:'#fff'}} } } });
       // EmailJS
       emailjs.init('CRY9t7KxoT1lJ5RjG');
       document.getElementById('inquiry-form').addEventListener('submit', function(e){ e.preventDefault(); emailjs.sendForm('service_yhmkgss','template_9fazrru',this).then(()=>{alert('✅ Inquiry sent!'); this.reset();},err=>{console.error(err);alert('❌ Inquiry failed.');}); });
