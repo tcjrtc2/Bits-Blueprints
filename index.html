@@ -8,30 +8,34 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     html, body { height:100%; margin:0; padding:0; }
     body { font-family:'Poppins',sans-serif; background:#0d0d2b; color:#eee; overflow-x:hidden; }
-    .background3d { position:fixed; top:-10%; left:-10%; width:120%; height:120%; background:linear-gradient(135deg,#2a0845,#4b0082,#0f2f61,#1a237e); background-size:400% 400%; transform-style:preserve-3d; animation:gradientAnim 30s ease infinite,bgPulseRotate 20s ease-in-out infinite,brightnessPulse 10s ease-in-out infinite; z-index:-1; filter:brightness(1); }
+    .background3d { position:fixed; top:-10%; left:-10%; width:120%; height:120%; background:linear-gradient(135deg,#2a0845,#4b0082,#0f2f61,#1a237e); background-size:400% 400%; transform-style:preserve-3d; will-change:transform,background-position,filter; animation:gradientAnim 30s ease infinite,bgPulseRotate 20s ease-in-out infinite,brightnessPulse 10s ease-in-out infinite; z-index:-1; filter:brightness(1); }
     @keyframes gradientAnim {0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
     @keyframes bgPulseRotate {0%{transform:rotateX(0deg) rotateY(0deg) scale(1)}25%{transform:rotateX(2deg) rotateY(2deg) scale(1.05)}50%{transform:rotateX(0deg) rotateY(0deg) scale(1)}75%{transform:rotateX(-2deg) rotateY(-2deg) scale(1.05)}100%{transform:rotateX(0deg) rotateY(0deg) scale(1)}}
     @keyframes brightnessPulse {0%,100%{filter:brightness(1)}50%{filter:brightness(1.2)}}
-    @keyframes ripple{0%,100%{transform:scale(1);color:#6f42c1}50%{transform:scale(1.3);color:#fff}}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
-    .reveal.active{opacity:1;transform:translateY(0)}
     .navbar{background:rgba(30,60,114,0.9)!important}
     .navbar-brand,.nav-link{color:#ddd!important}
     .nav-link:hover{color:#fff!important}
     .hero{background:rgba(30,60,114,0.8);margin-top:56px;padding:80px 0;text-align:center}
-    .futuristic-title{font-family:'Orbitron',sans-serif;font-size:clamp(2rem,8vw,3.5rem);color:#6f42c1;}
+    .futuristic-title{font-family:'Orbitron',sans-serif;font-size:clamp(2rem,8vw,3.5rem);color:#6f42c1;word-break:break-word}
     .futuristic-title span{display:inline-block;animation:ripple 1.6s ease-in-out infinite}
+    @keyframes ripple{0%,100%{transform:scale(1);color:#6f42c1}50%{transform:scale(1.3);color:#fff}}
     .lead{font-size:1.1rem}
     .section{padding:60px 0}
     .section-title{color:#fff;margin-bottom:1.5rem}
-    #experience,#education,#inquiry,#contact{background:rgba(30,60,114,0.1)}
+    #experience,#education{background:rgba(30,60,114,0.1)}
+    #impact{background:rgba(42,82,152,0.8)}
+    .chart-container{max-width:100%;margin:auto}
     .btn-primary{background:#6f42c1;border-color:#6f42c1}
     .btn-primary:hover{background:#5930a6;border-color:#5930a6}
     footer{background:#1e3c72;color:#fff;padding:20px 0;text-align:center}
     footer a{color:#fff;text-decoration:none}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+    .reveal.active{opacity:1;transform:translateY(0)}
     @media(max-width:576px){.hero{padding:40px 0}.lead{font-size:1rem}}
   </style>
 </head>
@@ -47,9 +51,9 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#impact">Projected Growth</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education & Training</a></li>
           <li class="nav-item"><a class="nav-link" href="#inquiry">Inquiry</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -63,39 +67,87 @@
     </div>
   </header>
 
+  <!-- About Section -->
   <section id="about" class="section reveal">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <p>Hello! I'm a passionate web designer dedicated to building customized websites that drive growth and engagement. Let's bring your vision to life.</p>
-      <p>With a Bachelor's in Computer Science and expertise in HTML5, CSS3, JavaScript, Bootstrap, and custom animations, I merge creativity with technical precision.</p>
+      <p>Hello! I'm a passionate web designer dedicated to building customized websites provide drive growth and engagement. Let's bring your vision to life.</p>
+      <p>With a Bachelor's in Computer Science and hands-on experience in HTML5, CSS3, JavaScript, Bootstrap, and Chart.js, I blend technical expertise with creative design principles.</p>
+      <p>My process includes wireframing, prototyping, performance optimization, SEO best practices, and cross-device compatibility to deliver efficient, impactful websites.</p>
     </div>
   </section>
 
+  <!-- Experience Section -->
   <section id="experience" class="section reveal">
     <div class="container">
       <h2 class="section-title">Experience</h2>
       <ul>
         <li>2+ years designing and developing websites for local businesses and start-ups.</li>
         <li>Responsive design expert for seamless desktop, tablet, and mobile experiences.</li>
-        <li>Dynamic features with JavaScript-powered interactions and animations.</li>
-        <li>SEO optimization, performance tuning, and cross-browser testing.</li>
-        <li>Custom CMS integrations, e-commerce, and booking platforms.</li>
+        <li>Dynamic features built with JavaScript, Bootstrap components, and Chart.js visualizations.</li>
+        <li>SEO optimization, performance tuning, and cross-browser testing for maximum reach.</li>
+        <li>E-commerce sites, booking platforms, and custom CMS integrations.</li>
+        <li>Ongoing support, maintenance, and feature updates.</li>
       </ul>
     </div>
   </section>
 
+  <!-- Why pick me section -->
+  <section id="impact" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Reasoning</h2>
+      <div class="chart-container">
+       <ul>
+        <li>True Expertise and Strategic Thinking: You bring a depth of knowledge in design principles, user experience (UX), user interface (UI), web development best practices, and crucial security measures like WAF configuration, which a template simply can't offer. You understand how to create a website that not only looks good but also achieves specific business goals securely.</li>
+
+	<p><li>Tailored Solutions, Not Just Templates: Unlike the limitations of pre-designed templates, you create a website specifically tailored to the client's brand identity, target audience, unique needs, and security requirements. This includes implementing a WAF that is configured precisely for their application.</li></p>
+
+	<p><li>Custom Functionality and Integration (Including Security): Template platforms often have limitations in terms of advanced features and integrations, especially when it comes to sophisticated security tools like a WAF with custom rulesets. You can develop custom functionalities and seamlessly integrate the website with CRMs, e-commerce platforms, marketing automation tools, and robust security infrastructure.</li></p>
+
+	<p><li>Performance Optimization and Security Hardening: You can optimize the website's code, images, and structure for faster loading speeds and better performance across different devices while also implementing security best practices and configuring the WAF to mitigate potential threats. This is crucial for user experience, search engine rankings, and website safety, something that can be hit-or-miss with template-based sites.</li></p>
+
+	<p><li>Scalability and Future-Proofing (with Security in Mind): A custom-built website is designed with scalability in mind. As the client's business grows and their needs evolve, the website can be adapted and expanded with ongoing security considerations and WAF adjustments without the constraints of a template's architecture.</li></p>
+
+	<p><li>Web Application Firewall (WAF) Implementation and Expertise: This is a significant advantage. You can implement and configure a WAF specifically tailored to the client's website and its potential vulnerabilities. This provides a crucial layer of defense against common web exploits like SQL injection, cross-site scripting (XSS), and DDoS attacks. Template platforms may offer some basic security features, but they often lack the granular control and expert configuration that you can provide with a dedicated WAF setup.</li></p>
+
+<p>
+<h2><strong>Addressing Ownership, Professionalism, and Security</strong></h2>
+</p>
+	<li>Complete Ownership and Control (Including Security Measures): With your services, the client owns their website and all its assets outright, including the configuration and control over their security measures like the WAF. They aren't locked into a specific platform's ecosystem or subject to their potentially limited security offerings.</li>
+
+	<p><li>No Watermarks or Platform Branding (and Enhanced Security Posture): A professionally designed website won't have any unwanted watermarks or branding from a website builder, ensuring a polished and credible online presence that is also more secure due to your expert implementation of security measures.</li></p>
+
+	<p><li>Professional Credibility and Trust (Built on a Secure Foundation): A unique, well-designed, and secure website created by a professional instills more trust and credibility in potential customers compared to a site that looks like it was built with a generic template and may have inherent security limitations.</li></p>
+
+	<p><li>Dedicated Support and Maintenance (Including Security Monitoring): You offer ongoing support, maintenance, and updates, including monitoring and fine-tuning the WAF to address emerging threats, ensuring the website remains secure, functional, and up-to-date. This level of dedicated security support is often lacking or comes at an extra cost with template platforms.</li></p>
+
+	<p><li>Beyond the Visuals and Basic Security: SEO Optimization from the Ground Up (with Security Considerations): You can implement search engine optimization (SEO) best practices from the initial design and development stages, making it easier for the client to rank higher in search results and attract organic traffic while ensuring that SEO efforts don't inadvertently create security vulnerabilities. Template platforms often have limitations in their SEO capabilities and security configurations.</li></p>
+
+	<p><li>Accessibility Considerations (and Secure Coding Practices): You can build websites with accessibility in mind, ensuring they are usable by people with disabilities while also adhering to secure coding practices that minimize potential security risks. This holistic approach is often missing in template-driven solutions.</li></p>
+
+	<p><li>Unique Design Elements and Branding (with Security Integrated): You can incorporate unique design elements and reinforce the client's branding consistently throughout the website, creating a memorable and cohesive online experience that is built on a secure foundation with a properly configured WAF."</li></p>
+      </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
   <section id="education" class="section reveal">
     <div class="container">
       <h2 class="section-title">Education & Training</h2>
       <ul>
         <li>Bachelor's in Computer Science</li>
         <li>Responsive Web Design – freeCodeCamp Certification</li>
+        <li>Web Development Bootcamp – Codecademy</li>
         <li>UI/UX Design – Coursera</li>
+        <li>CompTIA Security+ – Udemy</li>
         <li>Intro to Cybersecurity – Cisco Networking Academy</li>
+        <li>CEH Prep – EC-Council Ethical Hacking</li>
       </ul>
     </div>
   </section>
 
+  <!-- Inquiry Form Section -->
   <section id="inquiry" class="section reveal">
     <div class="container">
       <h2 class="section-title">Inquiry Form</h2>
@@ -116,44 +168,45 @@
     </div>
   </section>
 
+    <!-- Contact Info Section -->
   <section id="contact" class="section reveal">
     <div class="container text-center">
       <h2 class="section-title">Contact Information</h2>
       <p><strong>Phone:</strong> 757-218-4659</p>
-      <p><strong>Email:</strong> bits.blueprints@gmail.com</p>
+   	<p><strong>Email:</strong> bits.blueprints@gmail.com</p>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="reveal">
-    <div class="container">&copy; 2025 bits & blueprints</div>
+    <div class="container">
+      &copy; 2025 bits & blueprints
+    </div>
   </footer>
 
   <!-- Dependencies -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Reveal on scroll & Title Animation & Chart.js Init & EmailJS -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Title ripple animation
       const title = document.getElementById('hero-title');
       title.innerHTML = title.textContent.split('').map((c,i) => `<span style="animation-delay:${i*0.1}s">${c}</span>`).join('');
-      // Reveal on scroll
+      // Reveal
       const revealEls = document.querySelectorAll('.reveal');
-      const onScroll = () => revealEls.forEach(el => {
-        if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
-      });
+      const onScroll = () => revealEls.forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight-100) el.classList.add('active'); });
       window.addEventListener('scroll', onScroll);
       onScroll();
-      // EmailJS setup
+      // Chart.js
+      const ctx = document.getElementById('impactChart').getContext('2d');
+      new Chart(ctx, { type:'line', data:{ labels:['Start','3 Months','6 Months','12 Months'], datasets:[{ label:'Visits', data:[200,800,1500,3000], borderColor:'#00d8ff', tension:0.3 },{ label:'Sales', data:[1500,5000,12000,25000], borderColor:'#ff00f2', tension:0.3 }] }, options:{ responsive:true, plugins:{ title:{ display:true, text:'Finacial & Monetary Growth', color:'#fff' }}, scales:{ x:{ ticks:{ color:'#fff'}}, y:{ beginAtZero:true, ticks:{ color:'#fff'}} } } });
+      // EmailJS
       emailjs.init('CRY9t7KxoT1lJ5RjG');
-      document.getElementById('inquiry-form').addEventListener('submit', function(e){
-        e.preventDefault();
-        emailjs.sendForm('service_xzqkq4x','template_9fazrru',this)
-          .then(()=>{ alert('✅ Inquiry sent!'); this.reset(); })
-          .catch(err=>{ console.error(err); alert('❌ Inquiry failed.'); });
-      });
+      document.getElementById('inquiry-form').addEventListener('submit', function(e){ e.preventDefault(); emailjs.sendForm('service_xzqkq4x','template_9fazrru',this).then(()=>{alert('✅ Inquiry sent!'); this.reset();},err=>{console.error(err);alert('❌ Inquiry failed.');}); });
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 </html>
