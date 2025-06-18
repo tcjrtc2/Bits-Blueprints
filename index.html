@@ -3,9 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>bits & blueprints</title>
+  
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  
+  <!-- Performance Optimizations -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
+  
+  <title>Bit Blueprint - Professional Web Design & Development Services | Bits & Blueprints</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Bit Blueprint: Your premier web design and development service. Professional custom websites, security implementation, and digital solutions by Bits & Blueprints. Expert in WAF configuration, UI/UX design, and secure web development.">
+  <meta name="keywords" content="bit blueprint, bits and blueprints, bit blueprints, web design, web development, custom websites, WAF security, UI/UX design, professional web services, SEO optimization, secure web development">
+  <meta name="author" content="Bits & Blueprints">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:title" content="Bit Blueprint - Web Design & Development Services | Bits & Blueprints">
+  <meta property="og:description" content="Looking for Bit Blueprint? Find expert web development services with security implementation and modern design solutions by Bits & Blueprints. Custom websites that drive results.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bitsandblueprints.com">
+  <meta property="og:image" content="https://bitsandblueprints.com/images/og-image.jpg">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bit Blueprint | Professional Web Design & Development">
+  <meta name="twitter:description" content="Bit Blueprint: Expert web development with security-first approach and modern design solutions by Bits & Blueprints.">
+  
+  <!-- Canonical URL -->
+  <meta rel="canonical" href="https://bitsandblueprints.com">
+  
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <!-- Chart.js -->
@@ -33,9 +68,44 @@
     .btn-primary{background:#6f42c1;border-color:#6f42c1}
     .btn-primary:hover{background:#5930a6;border-color:#5930a6}
     footer{background:#1e3c72;color:#fff;padding:20px 0;text-align:center}
-    footer a{color:#fff;text-decoration:none}
+    footer a{color:#fff;text-decoration:none;transition:color 0.3s ease}
+    footer a:hover{color:#6f42c1;text-decoration:none}
+    .social-links{margin:15px 0}
+    .social-links a{
+      font-size:24px;
+      margin:0 10px;
+      display:inline-block;
+      transition:transform 0.3s ease;
+    }
+    .social-links a:hover{
+      transform:scale(1.2);
+    }
     .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
     .reveal.active{opacity:1;transform:translateY(0)}
+    #impact ul { padding-left: 0; list-style: none; }
+    #impact li {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(30, 60, 114, 0.3);
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    #impact li:hover {
+      transform: translateY(-5px);
+      background: rgba(30, 60, 114, 0.5);
+    }
+    #impact li strong {
+      display: block;
+      color: #6f42c1;
+      margin-bottom: 0.5rem;
+      font-size: 1.1em;
+    }
+    .section-subtitle {
+      color: #6f42c1;
+      margin: 2rem 0 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
     @media(max-width:576px){.hero{padding:40px 0}.lead{font-size:1rem}}
   </style>
 </head>
@@ -63,7 +133,7 @@
     <div class="container">
       <h1 class="futuristic-title" id="hero-title">bits & blueprints</h1>
       <p class="lead">Crafting the blueprint for your digital presence</p>
-      <a href="#inquiry" class="btn btn-primary btn-lg">Request Your Website</a>
+      <a href="#inquiry" class="btn btn-primary btn-lg">Request Your Website Or App</a>
     </div>
   </header>
 
@@ -71,8 +141,8 @@
   <section id="about" class="section reveal">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <p>Hello! I'm a passionate web designer dedicated to building customized websites provide drive growth and engagement. Let's bring your vision to life.</p>
-      <p>With a Bachelor's in Computer Science and hands-on experience in HTML5, CSS3, JavaScript, Bootstrap, and Chart.js, I blend technical expertise with creative design principles.</p>
+      <p>Welcome to Bit Blueprint! I'm a passionate web designer dedicated to building customized websites that drive growth and engagement. Whether you know us as Bit Blueprint or Bits & Blueprints, we're here to bring your vision to life.</p>
+      <p>With a Bachelor's in Computer Science and hands-on experience in HTML5, CSS3, JavaScript, Bootstrap, and Chart.js, I bring the perfect blend of technical expertise and creative design principles to every Bit Blueprint project.</p>
       <p>My process includes wireframing, prototyping, performance optimization, SEO best practices, and cross-device compatibility to deliver efficient, impactful websites.</p>
     </div>
   </section>
@@ -88,6 +158,9 @@
         <li>SEO optimization, performance tuning, and cross-browser testing for maximum reach.</li>
         <li>E-commerce sites, booking platforms, and custom CMS integrations.</li>
         <li>Ongoing support, maintenance, and feature updates.</li>
+        <li>Extensive experience with AI technologies and their practical applications.</li>
+        <li>Integration of AI-powered features for enhanced user experience and automation.</li>
+        <li>Expertise in leveraging AI tools for efficient development and problem solving.</li>
       </ul>
     </div>
   </section>
@@ -98,20 +171,51 @@
       <h2 class="section-title">Reasoning</h2>
       <div class="chart-container">
         <ul>
-          <li>True Expertise and Strategic Thinking: You bring a depth of knowledge in design principles, user experience (UX), user interface (UI), web development best practices, and crucial security measures like WAF configuration, which a template simply can't offer. You understand how to create a website that not only looks good but also achieves specific business goals securely.</li>
-          <li>Tailored Solutions, Not Just Templates: Unlike the limitations of pre-designed templates, you create a website specifically tailored to the client's brand identity, target audience, unique needs, and security requirements. This includes implementing a WAF that is configured precisely for their application.</li>
-          <li>Custom Functionality and Integration (Including Security): Template platforms often have limitations in terms of advanced features and integrations, especially when it comes to sophisticated security tools like a WAF with custom rulesets. You can develop custom functionalities and seamlessly integrate the website with CRMs, e-commerce platforms, marketing automation tools, and robust security infrastructure.</li>
-          <li>Performance Optimization and Security Hardening: You can optimize the website's code, images, and structure for faster loading speeds and better performance across different devices while also implementing security best practices and configuring the WAF to mitigate potential threats. This is crucial for user experience, search engine rankings, and website safety, something that can be hit-or-miss with template-based sites.</li>
-          <li>Scalability and Future-Proofing (with Security in Mind): A custom-built website is designed with scalability in mind. As the client's business grows and their needs evolve, the website can be adapted and expanded with ongoing security considerations and WAF adjustments without the constraints of a template's architecture.</li>
-          <li>Web Application Firewall (WAF) Implementation and Expertise: This is a significant advantage. You can implement and configure a WAF specifically tailored to the client's website and its potential vulnerabilities. This provides a crucial layer of defense against common web exploits like SQL injection, cross-site scripting (XSS), and DDoS attacks. Template platforms may offer some basic security features, but they often lack the granular control and expert configuration that you can provide with a dedicated WAF setup.</li>
-          <h2><strong>Addressing Ownership, Professionalism, and Security</strong></h2>
-          <li>Complete Ownership and Control (Including Security Measures): With your services, the client owns their website and all its assets outright, including the configuration and control over their security measures like the WAF. They aren't locked into a specific platform's ecosystem or subject to their potentially limited security offerings.</li>
-          <li>No Watermarks or Platform Branding (and Enhanced Security Posture): A professionally designed website won't have any unwanted watermarks or branding from a website builder, ensuring a polished and credible online presence that is also more secure due to your expert implementation of security measures.</li>
-          <li>Professional Credibility and Trust (Built on a Secure Foundation): A unique, well-designed, and secure website created by a professional instills more trust and credibility in potential customers compared to a site that looks like it was built with a generic template and may have inherent security limitations.</li>
-          <li>Dedicated Support and Maintenance (Including Security Monitoring): You offer ongoing support, maintenance, and updates, including monitoring and fine-tuning the WAF to address emerging threats, ensuring the website remains secure, functional, and up-to-date. This level of dedicated security support is often lacking or comes at an extra cost with template platforms.</li>
-          <li>Beyond the Visuals and Basic Security: SEO Optimization from the Ground Up (with Security Considerations): You can implement search engine optimization (SEO) best practices from the initial design and development stages, making it easier for the client to rank higher in search results and attract organic traffic while ensuring that SEO efforts don't inadvertently create security vulnerabilities. Template platforms often have limitations in their SEO capabilities and security configurations.</li>
-          <li>Accessibility Considerations (and Secure Coding Practices): You can build websites with accessibility in mind, ensuring they are usable by people with disabilities while also adhering to secure coding practices that minimize potential security risks. This holistic approach is often missing in template-driven solutions.</li>
-          <li>Unique Design Elements and Branding (with Security Integrated): You can incorporate unique design elements and reinforce the client's branding consistently throughout the website, creating a memorable and cohesive online experience that is built on a secure foundation with a properly configured WAF.</li>
+          <li><strong>True Expertise and Strategic Thinking</strong>
+            You bring a depth of knowledge in design principles, user experience (UX), user interface (UI), web development best practices, and crucial security measures like WAF configuration, which a template simply can't offer. You understand how to create a website that not only looks good but also achieves specific business goals securely.
+          </li>
+          <li><strong>Tailored Solutions, Not Just Templates</strong>
+            Unlike the limitations of pre-designed templates, you create a website specifically tailored to the client's brand identity, target audience, unique needs, and security requirements. This includes implementing a WAF that is configured precisely for their application.
+          </li>
+          <li><strong>Custom Functionality and Integration</strong>
+            Template platforms often have limitations in terms of advanced features and integrations, especially when it comes to sophisticated security tools like a WAF with custom rulesets. You can develop custom functionalities and seamlessly integrate the website with CRMs, e-commerce platforms, marketing automation tools, and robust security infrastructure.
+          </li>
+          <li><strong>Performance Optimization and Security Hardening</strong>
+            You can optimize the website's code, images, and structure for faster loading speeds and better performance across different devices while also implementing security best practices and configuring the WAF to mitigate potential threats. This is crucial for user experience, search engine rankings, and website safety.
+          </li>
+          <li><strong>Scalability and Future-Proofing</strong>
+            A custom-built website is designed with scalability in mind. As the client's business grows and their needs evolve, the website can be adapted and expanded with ongoing security considerations and WAF adjustments without the constraints of a template's architecture.
+          </li>
+          <li><strong>Web Application Firewall (WAF) Implementation</strong>
+            This is a significant advantage. You can implement and configure a WAF specifically tailored to the client's website and its potential vulnerabilities. This provides a crucial layer of defense against common web exploits like SQL injection, cross-site scripting (XSS), and DDoS attacks.
+          </li>
+          
+          <h3 class="section-subtitle">Ownership and Professionalism</h3>
+          
+          <li><strong>Complete Ownership and Control</strong>
+            With your services, the client owns their website and all its assets outright, including the configuration and control over their security measures like the WAF. They aren't locked into a specific platform's ecosystem.
+          </li>
+          <li><strong>No Watermarks or Platform Branding</strong>
+            A professionally designed website won't have any unwanted watermarks or branding from a website builder, ensuring a polished and credible online presence that is also more secure due to your expert implementation of security measures.
+          </li>
+          <li><strong>Professional Credibility and Trust</strong>
+            A unique, well-designed, and secure website created by a professional instills more trust and credibility in potential customers compared to a site that looks like it was built with a generic template.
+          </li>
+          <li><strong>Dedicated Support and Maintenance</strong>
+            You offer ongoing support, maintenance, and updates, including monitoring and fine-tuning the WAF to address emerging threats, ensuring the website remains secure, functional, and up-to-date.
+          </li>
+          
+          <h3 class="section-subtitle">Beyond the Basics</h3>
+          
+          <li><strong>SEO Optimization from the Ground Up</strong>
+            You can implement search engine optimization (SEO) best practices from the initial design and development stages, making it easier for the client to rank higher in search results and attract organic traffic while ensuring that SEO efforts don't create security vulnerabilities.
+          </li>
+          <li><strong>Accessibility Considerations</strong>
+            You can build websites with accessibility in mind, ensuring they are usable by people with disabilities while also adhering to secure coding practices that minimize potential security risks.
+          </li>
+          <li><strong>Unique Design Elements and Branding</strong>
+            You can incorporate unique design elements and reinforce the client's branding consistently throughout the website, creating a memorable and cohesive online experience that is built on a secure foundation with a properly configured WAF.
+          </li>
         </ul>
       </div>
     </div>
@@ -124,9 +228,9 @@
       <ul>
         <li>Bachelor's in Computer Science</li>
         <li>Responsive Web Design – freeCodeCamp Certification</li>
-        <li>Web Development Bootcamp – Codecademy</li>
-        <li>UI/UX Design – Coursera</li>
-        <li>CompTIA Security+ – Udemy</li>
+        <li>Social Media Marketing – Local business partnerships</li>
+        <li>UI/UX Design – Norfolk State University</li>
+        <li>CompTIA Security+ – CompTIA</li>
         <li>Intro to Cybersecurity – Cisco Networking Academy</li>
         <li>CEH Prep – EC-Council Ethical Hacking</li>
       </ul>
@@ -147,7 +251,7 @@
           </div>
         </div>
         <div class="mb-3">
-          <textarea name="details" class="form-control" rows="5" placeholder="Describe your website needs" required></textarea>
+          <textarea name="details" class="form-control" rows="5" placeholder="Describe your website or application needs" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit Inquiry</button>
       </form>
@@ -166,6 +270,11 @@
   <!-- Footer -->
   <footer class="reveal">
     <div class="container">
+      <div class="social-links">
+        <a href="https://www.instagram.com/bitsnblueprints?igsh=MW9pOGo1M2g3bjRycA==" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
       &copy; 2025 bits & blueprints
     </div>
   </footer>
@@ -248,6 +357,64 @@
         });
       }
     });
+  </script>
+
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Bits & Blueprints",
+      "alternateName": ["Bit Blueprint", "Bits and Blueprints", "Bit Blueprints"],
+      "description": "Professional web design and development services specializing in custom websites, security implementation, and digital solutions.",
+      "image": "https://bitsandblueprints.com/images/logo.jpg",
+      "url": "https://bitsandblueprints.com",
+      "telephone": "757-218-4659",
+      "email": "bits.blueprints@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.linkedin.com/company/bits-and-blueprints",
+        "https://github.com/bits-and-blueprints"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "description": "Custom Website Development Services"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Website Development",
+              "description": "Fully customized website development with security implementation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Application Security",
+              "description": "WAF configuration and security implementation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "UI/UX Design",
+              "description": "Professional user interface and experience design"
+            }
+          }
+        ]
+      }
+    }
   </script>
 </body>
 </html>
