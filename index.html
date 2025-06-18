@@ -608,6 +608,63 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Mobile responsiveness fixes */
+    @media (max-width: 768px) {
+      .hero .container {
+        width: 100%;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .title-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 0;
+        margin: 0 auto;
+        transform: scale(0.9);
+      }
+
+      .title-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .futuristic-title {
+        font-size: 3rem;
+        width: 100%;
+        text-align: center;
+      }
+
+      .holo-layer, 
+      .holo-scan, 
+      .holo-noise, 
+      .holo-glitch, 
+      .holo-base,
+      .interference-lines {
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .title-container {
+        transform: scale(0.8);
+      }
+
+      .futuristic-title {
+        font-size: 2.5rem;
+      }
+
+      .hero .container {
+        padding: 0 10px;
+      }
+    }
   </style>
 </head>
 <body>
