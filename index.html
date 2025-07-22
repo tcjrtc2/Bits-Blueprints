@@ -57,7 +57,12 @@
                    0 0 30px rgba(111, 66, 193, 0.1);
     }
     
-    html, body { height:100%; margin:0; padding:0; }
+    html, body { 
+      height:100%; 
+      margin:0; 
+      padding:0; 
+      scroll-behavior: smooth; 
+    }
     body { 
       font-family:'Poppins',sans-serif; 
       background:#0d0d2b; 
@@ -239,6 +244,12 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .hero::before {
@@ -597,6 +608,137 @@
       animation: footerGlow 3s ease-in-out infinite;
     }
 
+    /* Button enhancements for better interaction */
+    .btn {
+      cursor: pointer !important;
+      position: relative;
+      z-index: 10;
+      pointer-events: auto !important;
+      transition: all 0.3s ease;
+      border: 2px solid var(--primary);
+      background: var(--primary);
+      text-decoration: none !important;
+    }
+
+    .btn:hover {
+      cursor: pointer !important;
+      transform: translateY(-2px);
+      box-shadow: var(--neon-glow);
+      background: rgba(111, 66, 193, 0.8);
+      border-color: var(--accent);
+    }
+
+    .btn:focus,
+    .btn:active {
+      cursor: pointer !important;
+      outline: none;
+      box-shadow: var(--neon-glow);
+    }
+
+    #main-cta-button {
+      cursor: pointer !important;
+      position: relative;
+      z-index: 100;
+      pointer-events: auto !important;
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* Services Showcase Animation */
+    .services-showcase {
+      margin-top: 30px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .services-text {
+      font-size: 1.2rem;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .services-label {
+      color: var(--accent);
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(103, 194, 228, 0.5);
+    }
+
+    .animated-service {
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: lowercase;
+      min-width: 200px;
+      display: inline-block;
+      text-align: left;
+      position: relative;
+      text-shadow: 
+        0 0 5px rgba(111, 66, 193, 0.8),
+        0 0 10px rgba(111, 66, 193, 0.5),
+        0 0 15px rgba(111, 66, 193, 0.3);
+      animation: serviceGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes serviceGlow {
+      0% {
+        text-shadow: 
+          0 0 5px rgba(111, 66, 193, 0.8),
+          0 0 10px rgba(111, 66, 193, 0.5),
+          0 0 15px rgba(111, 66, 193, 0.3);
+      }
+      100% {
+        text-shadow: 
+          0 0 8px rgba(111, 66, 193, 1),
+          0 0 15px rgba(111, 66, 193, 0.8),
+          0 0 20px rgba(111, 66, 193, 0.5);
+      }
+    }
+
+    .animated-service::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      animation: underlineGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes underlineGlow {
+      0%, 100% { opacity: 0.3; transform: scaleX(0.5); }
+      50% { opacity: 1; transform: scaleX(1); }
+    }
+
+    /* Mobile responsiveness for services showcase */
+    @media (max-width: 768px) {
+      .services-text {
+        font-size: 1rem;
+        flex-direction: column;
+        gap: 5px;
+      }
+      
+      .animated-service {
+        min-width: 150px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-text {
+        font-size: 0.9rem;
+      }
+      
+      .animated-service {
+        min-width: 120px;
+      }
+    }
+
     /* Reveal Animation Enhancement */
     .reveal {
       opacity: 0;
@@ -707,7 +849,14 @@
         </div>
       </div>
       <p class="lead">Crafting the blueprint for your digital presence</p>
-      <a href="#inquiry" class="btn btn-primary btn-lg">Request Your Website or App</a>
+      <a href="#inquiry" class="btn btn-primary btn-lg" id="main-cta-button">Request Your Website or App</a>
+      <!-- Animated services showcase -->
+      <div class="services-showcase">
+        <div class="services-text">
+          <span class="services-label">Specializing in: </span>
+          <span class="animated-service" id="animated-service"></span>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -715,9 +864,9 @@
   <section id="about" class="section reveal cyber-box">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <p>Welcome to Bit Blueprint! I'm a passionate web designer dedicated to building customized websites that drive growth and engagement. Whether you know us as Bit Blueprint or Bits & Blueprints, we're here to bring your vision to life.</p>
-      <p>With a Bachelor's in Computer Science and hands-on experience in HTML5, CSS3, JavaScript, Bootstrap, and Chart.js, I bring the perfect blend of technical expertise and creative design principles to every Bit Blueprint project.</p>
-      <p>My process includes wireframing, prototyping, performance optimization, SEO best practices, and cross-device compatibility to deliver efficient, impactful websites.</p>
+      <p>Welcome to Bit Blueprint! I'm a passionate web designer dedicated to building customized websites that drive growth and engagement. We're here to bring your vision to life.</p>
+      <p>With a Bachelor's in Computer Science and hands-on experience in HTML5, CSS3, JavaScript, Bootstrap, Chart.js, and more, I bring the perfect blend of technical expertise and creative design principles to every project.</p>
+      <p>My process includes wireframing, prototyping, performance optimization, SEO best practices, and cross-device compatibility to deliver efficient and impactful websites.</p>
     </div>
   </section>
 
@@ -963,6 +1112,209 @@
       }
       window.addEventListener('scroll', onScroll);
       onScroll();
+
+      // Smooth scrolling for anchor links
+      function setupSmoothScrolling() {
+        const anchors = document.querySelectorAll('a[href^="#"]');
+        console.log('Found anchor links:', anchors.length);
+        
+        anchors.forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            console.log('Anchor clicked:', this.href);
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+            
+            console.log('Target ID:', targetId);
+            console.log('Target element:', target);
+            
+            if (target) {
+              // Get navbar height
+              const navbar = document.querySelector('.navbar');
+              const navbarHeight = navbar ? navbar.offsetHeight : 70;
+              
+              // Calculate target position
+              const targetPosition = target.offsetTop - navbarHeight - 30;
+              
+              console.log('Navbar height:', navbarHeight);
+              console.log('Target offset top:', target.offsetTop);
+              console.log('Calculated scroll position:', targetPosition);
+              
+              // Scroll to target
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+              
+              console.log('Scroll initiated');
+            } else {
+              console.error('Target not found for:', targetId);
+            }
+          }, true); // Use capture phase
+        });
+      }
+      
+      // Setup smooth scrolling after a short delay to ensure all elements are loaded
+      setTimeout(setupSmoothScrolling, 100);
+
+      // Services animation
+      const services = [
+        'E-commerce websites',
+        'booking websites', 
+        'dropshipping websites',
+        'blogs',
+        'news websites',
+        'educational websites',
+        'Wiki websites',
+        'portfolio websites',
+        'personal websites',
+        'community forums',
+        'social media apps',
+        'business websites',
+        'brochure websites',
+        'landing pages'
+      ];
+
+      let currentServiceIndex = 0;
+      const serviceElement = document.getElementById('animated-service');
+
+      function typeService(text, callback) {
+        let index = 0;
+        serviceElement.textContent = '';
+        
+        function typeChar() {
+          if (index < text.length) {
+            serviceElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeChar, 100); // Typing speed
+          } else {
+            setTimeout(callback, 2000); // Pause before erasing
+          }
+        }
+        
+        typeChar();
+      }
+
+      function eraseService(callback) {
+        let text = serviceElement.textContent;
+        
+        function eraseChar() {
+          if (text.length > 0) {
+            text = text.slice(0, -1);
+            serviceElement.textContent = text;
+            setTimeout(eraseChar, 50); // Erasing speed
+          } else {
+            setTimeout(callback, 500); // Pause before next service
+          }
+        }
+        
+        eraseChar();
+      }
+
+      function animateServices() {
+        const currentService = services[currentServiceIndex];
+        
+        typeService(currentService, function() {
+          eraseService(function() {
+            currentServiceIndex = (currentServiceIndex + 1) % services.length;
+            animateServices();
+          });
+        });
+      }
+
+      // Start the animation after page load
+      setTimeout(animateServices, 1000);
+
+      // Test function for direct scrolling
+      window.scrollToInquiry = function() {
+        console.log('Direct scroll function called');
+        const target = document.getElementById('inquiry');
+        if (target) {
+          const navbar = document.querySelector('.navbar');
+          const navbarHeight = navbar ? navbar.offsetHeight : 70;
+          const targetPosition = target.offsetTop - navbarHeight - 30;
+          
+          console.log('Direct scroll - target found, scrolling to:', targetPosition);
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        } else {
+          console.error('Direct scroll - inquiry section not found');
+        }
+      };
+
+      // Enhanced button click handler - multiple approaches for reliability
+      function setupButtonHandlers() {
+        const button = document.getElementById('main-cta-button');
+        const inquirySection = document.getElementById('inquiry');
+        
+        if (button && inquirySection) {
+          console.log('Setting up button handlers...');
+          
+          // Method 1: Direct click handler
+          button.addEventListener('click', function(e) {
+            console.log('Button clicked - Method 1');
+            e.preventDefault();
+            scrollToSection();
+          });
+          
+          // Method 2: Mouse events for additional reliability
+          button.addEventListener('mousedown', function(e) {
+            console.log('Button mousedown - Method 2');
+            e.preventDefault();
+          });
+          
+          button.addEventListener('mouseup', function(e) {
+            console.log('Button mouseup - Method 2');
+            e.preventDefault();
+            scrollToSection();
+          });
+          
+          // Method 3: Touch events for mobile
+          button.addEventListener('touchstart', function(e) {
+            console.log('Button touchstart - Method 3');
+            e.preventDefault();
+            scrollToSection();
+          });
+          
+          function scrollToSection() {
+            console.log('Scrolling to inquiry section...');
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 70;
+            const targetPosition = inquirySection.offsetTop - navbarHeight - 30;
+            
+            // Force scroll using multiple methods
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Fallback method
+            setTimeout(() => {
+              if (window.pageYOffset < targetPosition - 100) {
+                document.documentElement.scrollTop = targetPosition;
+                document.body.scrollTop = targetPosition;
+              }
+            }, 100);
+          }
+          
+          // Visual feedback
+          button.style.cursor = 'pointer';
+          button.style.pointerEvents = 'auto';
+          
+          console.log('Button handlers set up successfully');
+        } else {
+          console.error('Button or inquiry section not found');
+        }
+      }
+      
+      // Run immediately and after delay
+      setupButtonHandlers();
+      setTimeout(setupButtonHandlers, 500);
+      setTimeout(setupButtonHandlers, 1000);
 
       // EmailJS initialization
       emailjs.init('CRY9t7KxoT1lJ5RjG');
